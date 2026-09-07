@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-SAFFAH QURAN ACADEMY - Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-dark-green: #03201A; --bg-darker-green: #011410; --gold-primary: #D4AF37; --gold-light: #F3E5AB; --cream-bg: #FAF6EE; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--cream-bg); line-height: 1.6; }
+        .header-banner { background-color: var(--bg-dark-green); color: var(--gold-primary); text-align: center; padding: 25px 20px; border-bottom: 4px solid var(--gold-primary); }
+        .header-banner h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; }
+        nav { background-color: var(--bg-darker-green); display: flex; justify-content: center; gap: 10px; padding: 12px; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+        nav a { color: var(--gold-light); text-decoration: none; border: 1px solid var(--gold-primary); padding: 8px 16px; border-radius: 5px; font-weight: 600; }
+        nav a:hover, nav a.active { background-color: var(--gold-primary); color: var(--bg-dark-green); }
+        .container { max-width: 600px; margin: 30px auto; padding: 0 20px; }
+        .form-card { background: var(--white); border: 2px solid var(--gold-primary); border-radius: 10px; padding: 30px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: 600; color: var(--bg-dark-green); margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+        .submit-btn { background-color: var(--bg-dark-green); color: var(--gold-primary); border: 1px solid var(--gold-primary); width: 100%; padding: 12px; font-size: 1.1rem; font-weight: bold; border-radius: 5px; cursor: pointer; }
+        .id-card { display: none; background: var(--bg-dark-green); color: var(--white); border: 2px solid var(--gold-primary); border-radius: 10px; padding: 20px; margin-top: 20px; text-align: center; }
+        .id-number { font-size: 1.8rem; color: var(--gold-light); font-weight: bold; margin: 10px 0; }
+        .btn-wa { background-color: var(--gold-primary); color: var(--bg-dark-green); padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 10px; }
+        footer { background-color: var(--bg-darker-green); color: var(--white); text-align: center; padding: 25px; border-top: 3px solid var(--gold-primary); margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <h1>AL-SAFFAH QURAN ACADEMY</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Home (Intro)</a>
+        <a href="lessons.html">Lessons & Syllabus</a>
+        <a href="contact.html">Contact & Fee</a>
+        <a href="register.html" class="active">Student Registration</a>
+    </nav>
+
+    <div class="container">
+        <div class="form-card">
+            <h2 style="color: var(--bg-dark-green); text-align: center; margin-bottom: 20px;">Student Registration</h2>
+            <form onsubmit="handleRegistration(event)">
+                <div class="form-group">
+                    <label>Parent / Guardian Full Name *</label>
+                    <input type="text" id="parentName" required placeholder="Parent Name">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp / Phone Number *</label>
+                    <input type="tel" id="parentPhone" required placeholder="+92 300 0000000">
+                </div>
+                <div class="form-group">
+                    <label>Student Full Name *</label>
+                    <input type="text" id="studentName" required placeholder="Student Name">
+                </div>
+                <div class="form-group">
+                    <label>Select Course *</label>
+                    <select id="selectedCourse">
+                        <option>Noorani Qaida</option>
+                        <option>Nazra Quran</option>
+                        <option>Hifz-ul-Quran</option>
+                        <option>Tajweed Course</option>
+                        <option>Translation & Tafseer</option>
+                        <option>Duas & Daily Supplications</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT & GENERATE STUDENT ID</button>
+            </form>
+
+            <div id="idCardResult" class="id-card">
+                <h3 style="color: var(--gold-primary);">Registration Completed!</h3>
+                <p>Assigned Student ID:</p>
+                <div class="id-number" id="assignedID">ASQA-0000</div>
+                <p id="studentDetailsText" style="font-size: 0.9rem; margin-bottom: 15px;"></p>
+                <a id="whatsappShareBtn" href="#" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Send ID to Teacher on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>AL-SAFFAH QURAN ACADEMY</p>
+	<p>CREATED BY ZAINAB ZULFIQAR</p>
+    </footer>
+
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault();
+            const parentName = document.getElementById('parentName').value;
+            const studentName = document.getElementById('studentName').value;
+            const selectedCourse = document.getElementById('selectedCourse').value;
+
+            const randomID = "ASQA-" + Math.floor(1000 + Math.random() * 9000);
+
+            document.getElementById('assignedID').innerText = randomID;
+            document.getElementById('studentDetailsText').innerText = `Student: ${studentName} | Parent: ${parentName} | Course: ${selectedCourse}`;
+            
+            const message = `Assalam o Alaikum, I registered my child.%0A%0A*Student ID:* ${randomID}%0A*Student Name:* ${studentName}%0A*Parent Name:* ${parentName}%0A*Course:* ${selectedCourse}`;
+            document.getElementById('whatsappShareBtn').href = `https://wa.me/923351404284?text=${message}`;
+
+            document.getElementById('idCardResult').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-SAFFAH QURAN ACADEMY - Lessons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-dark-green: #03201A; --bg-darker-green: #011410; --gold-primary: #D4AF37; --gold-light: #F3E5AB; --cream-bg: #FAF6EE; --white: #FFFFFF; --card-bg: #F4EFE6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--cream-bg); line-height: 1.6; }
+        .header-banner { background-color: var(--bg-dark-green); color: var(--gold-primary); text-align: center; padding: 25px 20px; border-bottom: 4px solid var(--gold-primary); }
+        .header-banner h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; }
+        nav { background-color: var(--bg-darker-green); display: flex; justify-content: center; gap: 10px; padding: 12px; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+        nav a { color: var(--gold-light); text-decoration: none; border: 1px solid var(--gold-primary); padding: 8px 16px; border-radius: 5px; font-weight: 600; }
+        nav a:hover, nav a.active { background-color: var(--gold-primary); color: var(--bg-dark-green); }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .ribbon-heading { background-color: var(--bg-dark-green); color: var(--gold-primary); text-align: center; padding: 12px; font-family: 'Cinzel', serif; font-size: 1.5rem; border-radius: 5px; margin-bottom: 25px; border-left: 5px solid var(--gold-primary); }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .course-card { background-color: var(--card-bg); border: 2px solid var(--gold-primary); border-radius: 8px; padding: 20px; text-align: center; }
+        .course-card h3 { background-color: var(--bg-dark-green); color: var(--gold-primary); padding: 8px; border-radius: 4px; font-size: 1.1rem; margin-bottom: 15px; }
+        .course-card i { font-size: 2.5rem; color: var(--bg-dark-green); margin-bottom: 10px; }
+        footer { background-color: var(--bg-darker-green); color: var(--white); text-align: center; padding: 25px; border-top: 3px solid var(--gold-primary); margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <h1>AL-SAFFAH QURAN ACADEMY</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Home (Intro)</a>
+        <a href="lessons.html" class="active">Lessons & Syllabus</a>
+        <a href="contact.html">Contact & Fee</a>
+        <a href="register.html">Student Registration</a>
+    </nav>
+
+    <div class="container">
+        <div class="ribbon-heading">OUR COURSES & LESSONS</div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <h3>Noorani Qaida</h3>
+                <i class="fas fa-book-open"></i>
+                <p>Start learning Arabic alphabets and basic pronunciation rules from scratch.</p>
+            </div>
+            <div class="course-card">
+                <h3>Nazra Quran (Reading)</h3>
+                <i class="fas fa-quran"></i>
+                <p>Learn to read the complete Quran Majeed fluently with proper pronunciation.</p>
+            </div>
+            <div class="course-card">
+                <h3>Hifz-ul-Quran (Memorization)</h3>
+                <i class="fas fa-brain"></i>
+                <p>Memorize selected Surahs or the entire Quran using structured techniques.</p>
+            </div>
+            <div class="course-card">
+                <h3>Tajweed (Pronunciation)</h3>
+                <i class="fas fa-microphone-lines"></i>
+                <p>Master precise Tajweed rules and beautiful recitation style.</p>
+            </div>
+            <div class="course-card">
+                <h3>Translation & Tafseer</h3>
+                <i class="fas fa-book-quran"></i>
+                <p>Understand the deeper meanings and Islamic messages of Quranic verses.</p>
+            </div>
+            <div class="course-card">
+                <h3>Dua's & Daily Supplications</h3>
+                <i class="fas fa-hands-praying"></i>
+                <p>Learn authentic daily Duas, 6 Kalmas, and method of Namaz for kids and adults.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Learn Quran Today, Lead a Better Tomorrow</p>
+	<p>CREATED BY ZAINAB ZULFIQAR</p>
+    </footer>
+</body>
+</html>
